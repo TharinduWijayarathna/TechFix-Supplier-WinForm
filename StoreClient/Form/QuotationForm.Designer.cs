@@ -35,14 +35,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtDes = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +66,7 @@
             this.button2.TabIndex = 49;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDelete
             // 
@@ -76,6 +76,7 @@
             this.btnDelete.TabIndex = 48;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtID
             // 
@@ -103,6 +104,7 @@
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -112,14 +114,7 @@
             this.btnAdd.TabIndex = 44;
             this.btnAdd.Text = "Save";
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // txtDes
-            // 
-            this.txtDes.Location = new System.Drawing.Point(135, 132);
-            this.txtDes.Multiline = true;
-            this.txtDes.Name = "txtDes";
-            this.txtDes.Size = new System.Drawing.Size(214, 104);
-            this.txtDes.TabIndex = 43;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label4
             // 
@@ -127,16 +122,8 @@
             this.label4.Location = new System.Drawing.Point(10, 135);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 42;
-            this.label4.Text = "Description";
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(135, 94);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(214, 20);
-            this.txtStock.TabIndex = 41;
             // 
             // label3
             // 
@@ -144,9 +131,9 @@
             this.label3.Location = new System.Drawing.Point(10, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 40;
-            this.label3.Text = "Quantity";
+            this.label3.Text = "Date";
             // 
             // txtName
             // 
@@ -175,20 +162,26 @@
             this.Add.HeaderText = "Add";
             this.Add.Name = "Add";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(135, 89);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
+            this.dateTimePicker1.TabIndex = 50;
+            // 
             // QuotationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 461);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtDes);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
@@ -210,13 +203,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtDes;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Add;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
