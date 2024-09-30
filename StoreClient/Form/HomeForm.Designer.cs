@@ -51,7 +51,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(232, 40);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Manage Quote Requests";
+            this.button2.Text = "Quote Requests";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -61,7 +61,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(232, 40);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Manage Orders";
+            this.button3.Text = "Client Orders";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -81,7 +81,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(232, 40);
             this.button5.TabIndex = 4;
-            this.button5.Text = "View Quotations";
+            this.button5.Text = "Manage Quotation";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
