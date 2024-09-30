@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace StoreClient.Model
 {
-    internal class Stock
+    internal class Inventory
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
+        public int Quantity { get; set; } = 0;
         public string Description { get; set; }
     }
 }

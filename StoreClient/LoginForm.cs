@@ -22,7 +22,7 @@ namespace StoreClient
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            if (username == "admin" && password == "admin")
+            if (username == "supplier1" && password == "supplier1")
             {
                 this.Hide();
                 HomeForm homeForm = new HomeForm();

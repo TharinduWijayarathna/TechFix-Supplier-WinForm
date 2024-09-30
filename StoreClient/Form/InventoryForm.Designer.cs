@@ -1,6 +1,6 @@
 ﻿namespace StoreClient
 {
-    partial class StockForm
+    partial class InventroyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDes = new System.Windows.Forms.TextBox();
@@ -66,37 +64,17 @@
             this.txtName.TabIndex = 1;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(138, 100);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(214, 32);
-            this.txtPrice.TabIndex = 3;
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 103);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Price";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(138, 138);
+            this.txtStock.Location = new System.Drawing.Point(138, 100);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(214, 32);
             this.txtStock.TabIndex = 5;
-            this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 141);
+            this.label3.Location = new System.Drawing.Point(13, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 26);
@@ -106,7 +84,7 @@
             // 
             // txtDes
             // 
-            this.txtDes.Location = new System.Drawing.Point(138, 176);
+            this.txtDes.Location = new System.Drawing.Point(138, 138);
             this.txtDes.Multiline = true;
             this.txtDes.Name = "txtDes";
             this.txtDes.Size = new System.Drawing.Size(214, 104);
@@ -116,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 179);
+            this.label4.Location = new System.Drawing.Point(13, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 26);
@@ -217,14 +195,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "StockForm";
-            this.Text = "Manage Stock";
+            this.Text = "Manage Inventory";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
@@ -236,8 +212,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDes;

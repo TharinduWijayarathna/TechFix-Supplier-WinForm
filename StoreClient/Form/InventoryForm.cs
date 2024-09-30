@@ -1,50 +1,44 @@
-﻿using System;
+﻿using StoreClient.Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Net.Http;
+using System.Text;
 using System.Web.Script.Serialization;
-using StoreClient.Model;
+using System.Windows.Forms;
 
 namespace StoreClient
 {
-    public partial class StockForm : Form
+    public partial class InventroyForm : Form
     {
-        public StockForm()
+        public InventroyForm()
         {
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:7135/api/Stock";
+            string url = "https://localhost:7135/api/Inventory";
             HttpClient client = new HttpClient();
-            Stock item = new Stock();
+            Inventory item = new Inventory();
             item.Name = txtName.Text;
             item.Description = txtDes.Text;
-            item.Price = Convert.ToDecimal(txtPrice.Text);
             item.Quantity = Convert.ToInt32(txtStock.Text);
-            string info=(new JavaScriptSerializer()).Serialize(item);
-            var content=new StringContent(info,
-                Encoding.UTF8,"application/json");
+            string info = (new JavaScriptSerializer()).Serialize(item);
+            var content = new StringContent(info,
+                Encoding.UTF8, "application/json");
             var response = client.PostAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Prodcut added");
+                MessageBox.Show("Inventory added");
                 LoadData();
             }
             else
-                MessageBox.Show("Fail to add Stock");
+                MessageBox.Show("Fail to add Inventory");
         }
 
         private void LoadData()
         {
-            string url = "https://localhost:7135/api/Stock";
+            string url = "https://localhost:7135/api/Inventory";
             HttpClient client = new HttpClient();
             var resTask = client.GetAsync(url);
             resTask.Wait();
@@ -53,10 +47,10 @@ namespace StoreClient
             {
                 var readTask = result.Content.ReadAsStringAsync();
                 readTask.Wait();
-                var items= readTask.Result;
+                var items = readTask.Result;
                 dgvItems.DataSource = null;
                 dgvItems.DataSource = (new JavaScriptSerializer()).
-                                        Deserialize<List<Stock>>(items);
+                                        Deserialize<List<Inventory>>(items);
             }
         }
 
@@ -67,12 +61,11 @@ namespace StoreClient
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:7135/api/Stock/"+txtID.Text;
+            string url = "https://localhost:7135/api/Inventory/" + txtID.Text;
             HttpClient client = new HttpClient();
-            Stock item = new Stock();
+            Inventory item = new Inventory();
             item.Name = txtName.Text;
             item.Description = txtDes.Text;
-            item.Price = Convert.ToDecimal(txtPrice.Text);
             item.Quantity = Convert.ToInt32(txtStock.Text);
             string info = (new JavaScriptSerializer()).Serialize(item);
             var content = new StringContent(info,
@@ -80,11 +73,11 @@ namespace StoreClient
             var response = client.PutAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Prodcut Updated");
+                MessageBox.Show("Inventory Updated");
                 LoadData();
             }
             else
-                MessageBox.Show("Fail to update Stock");
+                MessageBox.Show("Fail to update Inventory");
         }
 
         private void dgvItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,17 +88,16 @@ namespace StoreClient
             {
                 txtID.Text = dgvItems.Rows[r].Cells[1].Value.ToString();
                 txtName.Text = dgvItems.Rows[r].Cells[2].Value.ToString();
-                txtPrice.Text = dgvItems.Rows[r].Cells[3].Value.ToString();
-                txtStock.Text = dgvItems.Rows[r].Cells[4].Value.ToString();
-                txtDes.Text = dgvItems.Rows[r].Cells[5].Value.ToString();
+                txtStock.Text = dgvItems.Rows[r].Cells[3].Value.ToString();
+                txtDes.Text = dgvItems.Rows[r].Cells[4].Value.ToString();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:7135/api/Stock/" + txtID.Text;
+            string url = "https://localhost:7135/api/Inventory/" + txtID.Text;
             HttpClient client = new HttpClient();
-            var res=client.DeleteAsync(url).Result;
+            var res = client.DeleteAsync(url).Result;
             if (res.IsSuccessStatusCode)
                 LoadData();
             else
@@ -140,7 +132,7 @@ namespace StoreClient
 
         }
 
-        private void txtStock_TextChanged(object sender, EventArgs e)
+        private void txtInventory_TextChanged(object sender, EventArgs e)
         {
 
         }

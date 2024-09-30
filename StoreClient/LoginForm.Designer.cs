@@ -71,7 +71,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(278, 23);
             this.label3.TabIndex = 3;
-            this.label3.Text = "TechFix App";
+            this.label3.Text = "TechFix Supplier App 1";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBox1

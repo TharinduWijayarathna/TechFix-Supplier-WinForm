@@ -25,8 +25,8 @@ namespace StoreClient
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            StockForm stockForm = new StockForm();
-            stockForm.ShowDialog();
+            InventroyForm inventroyForm = new InventroyForm();
+            inventroyForm.ShowDialog();
             this.Close();
         }
 

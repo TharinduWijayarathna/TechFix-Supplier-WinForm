@@ -52,11 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\StockForm.cs">
+    <Compile Include="Form\InventoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\StockForm.Designer.cs">
-      <DependentUpon>StockForm.cs</DependentUpon>
+    <Compile Include="Form\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\HomeForm.cs">
       <SubType>Form</SubType>
@@ -70,13 +70,13 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Inventory.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderItem.cs" />
     <Compile Include="Model\Quotation.cs" />
     <Compile Include="Model\QuotationItem.cs" />
     <Compile Include="Model\QuoteRequest.cs" />
     <Compile Include="Model\QuoteRequestItem.cs" />
-    <Compile Include="Model\Stock.cs" />
     <Compile Include="Form\OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Form\QuoteRequestItemForm.resx">
       <DependentUpon>QuoteRequestItemForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\StockForm.resx">
-      <DependentUpon>StockForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
