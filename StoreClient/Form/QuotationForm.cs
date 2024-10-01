@@ -37,6 +37,11 @@ namespace StoreClient
                 dgvItems.DataSource = null;
                 dgvItems.DataSource = (new JavaScriptSerializer()).
                                         Deserialize<List<Quotation>>(items);
+                //remove SupplierId from the grid
+                dgvItems.Columns.Remove("SupplierId");
+
+                // Re-add action columns
+                AddActionColumns();
             }
         }
 
@@ -44,17 +49,16 @@ namespace StoreClient
         {
             int r = e.RowIndex;
             int c = e.ColumnIndex;
-            if (c == 0)
+            if (c == 3)
             {
-                txtID.Text = dgvItems.Rows[r].Cells[2].Value.ToString();
-                txtName.Text = dgvItems.Rows[r].Cells[3].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(dgvItems.Rows[r].Cells[4].Value);
+                txtID.Text = dgvItems.Rows[r].Cells[0].Value.ToString();
+                txtName.Text = dgvItems.Rows[r].Cells[1].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(dgvItems.Rows[r].Cells[2].Value);
             }
 
-            //if c == 1 pass the id to the next form
-            if (c == 1)
+            if (c == 4)
             {
-                int id = Convert.ToInt32(dgvItems.Rows[r].Cells[2].Value);
+                int id = Convert.ToInt32(dgvItems.Rows[r].Cells[0].Value);
                 this.Hide();
                 QuotationItemForm form = new QuotationItemForm(id);
                 form.ShowDialog();
@@ -65,6 +69,7 @@ namespace StoreClient
         private void QuotationForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            CustomizeDataGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -182,6 +187,57 @@ namespace StoreClient
             HomeForm form = new HomeForm();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void CustomizeDataGridView()
+        {
+            dgvItems.EnableHeadersVisualStyles = false;
+            dgvItems.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgvItems.ColumnHeadersDefaultCellStyle.Font = new Font("Gabriola", 13, FontStyle.Bold);
+            dgvItems.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvItems.DefaultCellStyle.Font = new Font("Gabriola", 12, FontStyle.Regular);
+            dgvItems.DefaultCellStyle.ForeColor = Color.Black;
+            dgvItems.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgvItems.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgvItems.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvItems.RowTemplate.Height = 30;
+            dgvItems.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+
+            dgvItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            AddActionColumns();
+        }
+
+        private void AddActionColumns()
+        {
+            // Remove existing action columns if they exist
+            if (dgvItems.Columns["EditColumn"] != null)
+                dgvItems.Columns.Remove("EditColumn");
+            if (dgvItems.Columns["AddItemColumn"] != null)
+                dgvItems.Columns.Remove("AddItemColumn");
+
+            // Add Edit button column
+            DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
+            editButton.Name = "EditColumn";
+            editButton.HeaderText = "Action";
+            editButton.Text = "Edit";
+            editButton.UseColumnTextForButtonValue = true;
+            dgvItems.Columns.Add(editButton);
+
+            // Add Add Item button column
+            DataGridViewButtonColumn addButton = new DataGridViewButtonColumn();
+            addButton.Name = "AddItemColumn";
+            addButton.HeaderText = "Action";
+            addButton.Text = "Add Item";
+            addButton.UseColumnTextForButtonValue = true;
+            dgvItems.Columns.Add(addButton);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

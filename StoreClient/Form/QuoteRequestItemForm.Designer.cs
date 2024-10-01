@@ -37,17 +37,18 @@
             // 
             this.dgvItems.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(7, 7);
+            this.dgvItems.Location = new System.Drawing.Point(4, 4);
             this.dgvItems.Name = "dgvItems";
-            this.dgvItems.Size = new System.Drawing.Size(688, 439);
+            this.dgvItems.Size = new System.Drawing.Size(691, 442);
             this.dgvItems.TabIndex = 23;
             this.dgvItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellContentClick);
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(591, 452);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 43);
+            this.button1.Size = new System.Drawing.Size(104, 36);
             this.button1.TabIndex = 28;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,7 +58,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 500);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(700, 495);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvItems);
             this.Name = "QuoteRequestItemForm";

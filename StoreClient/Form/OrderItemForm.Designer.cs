@@ -37,14 +37,15 @@
             // 
             this.dgvItems.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(12, 7);
+            this.dgvItems.Location = new System.Drawing.Point(1, 4);
             this.dgvItems.Name = "dgvItems";
-            this.dgvItems.Size = new System.Drawing.Size(625, 439);
+            this.dgvItems.Size = new System.Drawing.Size(636, 442);
             this.dgvItems.TabIndex = 36;
             this.dgvItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellContentClick);
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(541, 452);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 34);
@@ -57,7 +58,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 489);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(638, 489);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvItems);
             this.Name = "OrderItemForm";

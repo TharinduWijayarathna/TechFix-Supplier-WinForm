@@ -34,5 +34,10 @@ namespace StoreClient
                 MessageBox.Show("Invalid username or password");
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

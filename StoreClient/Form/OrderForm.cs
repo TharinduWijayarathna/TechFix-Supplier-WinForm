@@ -42,20 +42,46 @@ namespace StoreClient
         private void OrderForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            CustomizeDataGridView();
         }
 
         private void dgvItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = e.RowIndex;
             int c = e.ColumnIndex;
-            if (c == 0)
+            if (c == 4)
             {
-                int id = Convert.ToInt32(dgvItems.Rows[r].Cells[1].Value);
+                int id = Convert.ToInt32(dgvItems.Rows[r].Cells[0].Value);
                 this.Hide();
                 OrderItemForm form = new OrderItemForm(id);
                 form.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void CustomizeDataGridView()
+        {
+            dgvItems.EnableHeadersVisualStyles = false;
+            dgvItems.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgvItems.ColumnHeadersDefaultCellStyle.Font = new Font("Gabriola", 13, FontStyle.Bold);
+            dgvItems.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvItems.DefaultCellStyle.Font = new Font("Gabriola", 12, FontStyle.Regular);
+            dgvItems.DefaultCellStyle.ForeColor = Color.Black;
+            dgvItems.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgvItems.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgvItems.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvItems.RowTemplate.Height = 30;
+            dgvItems.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+
+            dgvItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
+            editButton.HeaderText = "Action";
+            editButton.Text = "View";
+            editButton.UseColumnTextForButtonValue = true;
+            dgvItems.Columns.Add(editButton);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
