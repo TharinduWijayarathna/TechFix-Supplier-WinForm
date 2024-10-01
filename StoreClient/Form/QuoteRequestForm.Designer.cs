@@ -63,6 +63,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvItems);
             this.Name = "QuoteRequestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuoteRequestForm";
             this.Load += new System.EventHandler(this.QuoteRequestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

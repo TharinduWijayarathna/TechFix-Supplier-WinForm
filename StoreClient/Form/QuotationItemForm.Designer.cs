@@ -220,6 +220,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvItems);
             this.Name = "QuotationItemForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuotationItemForm";
             this.Load += new System.EventHandler(this.QuotationItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
