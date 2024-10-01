@@ -64,7 +64,7 @@
             this.Controls.Add(this.dgvItems);
             this.Name = "OrderItemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OrderItemForm";
+            this.Text = "Order Items";
             this.Load += new System.EventHandler(this.OrderItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);

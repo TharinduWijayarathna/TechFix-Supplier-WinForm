@@ -203,7 +203,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "InventroyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Inventory";
+            this.Text = "Inventory Management";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);

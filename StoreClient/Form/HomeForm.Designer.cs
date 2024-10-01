@@ -126,7 +126,7 @@
             this.Controls.Add(this.button1);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeForm";
+            this.Text = "Home";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.ResumeLayout(false);
 
