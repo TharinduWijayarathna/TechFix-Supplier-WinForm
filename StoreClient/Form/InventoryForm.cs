@@ -24,6 +24,7 @@ namespace StoreClient
             item.Name = txtName.Text;
             item.Description = txtDes.Text;
             item.Quantity = Convert.ToInt32(txtStock.Text);
+            item.SupplierId = 1;
             string info = (new JavaScriptSerializer()).Serialize(item);
             var content = new StringContent(info,
                 Encoding.UTF8, "application/json");
@@ -39,7 +40,7 @@ namespace StoreClient
 
         private void LoadData()
         {
-            string url = "https://localhost:7135/api/Inventory/supplier" + 1;
+            string url = "https://localhost:7135/api/Inventory/supplier/" + 1;
             HttpClient client = new HttpClient();
             var resTask = client.GetAsync(url);
             resTask.Wait();
@@ -52,6 +53,8 @@ namespace StoreClient
                 dgvItems.DataSource = null;
                 dgvItems.DataSource = (new JavaScriptSerializer()).
                                         Deserialize<List<Inventory>>(items);
+                //hide SupplierId column
+                dgvItems.Columns["SupplierId"].Visible = false;
 
                 // Re-add action column
                 AddActionColumn();
@@ -91,10 +94,10 @@ namespace StoreClient
             int c = e.ColumnIndex;
             if (c == dgvItems.Columns.Count - 1) // Check if it's the last column (Edit button)
             {
-                txtID.Text = dgvItems.Rows[r].Cells[0].Value.ToString();
-                txtName.Text = dgvItems.Rows[r].Cells[1].Value.ToString();
-                txtStock.Text = dgvItems.Rows[r].Cells[2].Value.ToString();
-                txtDes.Text = dgvItems.Rows[r].Cells[3].Value.ToString();
+                txtID.Text = dgvItems.Rows[r].Cells["Id"].Value.ToString();
+                txtName.Text = dgvItems.Rows[r].Cells["Name"].Value.ToString();
+                txtStock.Text = dgvItems.Rows[r].Cells["Quantity"].Value.ToString();
+                txtDes.Text = dgvItems.Rows[r].Cells["Description"].Value.ToString();
             }
         }
 
