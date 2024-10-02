@@ -75,6 +75,7 @@ namespace StoreClient
             item.Name = txtName.Text;
             item.Description = txtDes.Text;
             item.Quantity = Convert.ToInt32(txtStock.Text);
+            item.SupplierId = 1;
             string info = (new JavaScriptSerializer()).Serialize(item);
             var content = new StringContent(info,
                 Encoding.UTF8, "application/json");
