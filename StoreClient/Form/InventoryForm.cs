@@ -39,7 +39,7 @@ namespace StoreClient
 
         private void LoadData()
         {
-            string url = "https://localhost:7135/api/Inventory";
+            string url = "https://localhost:7135/api/Inventory/supplier" + 1;
             HttpClient client = new HttpClient();
             var resTask = client.GetAsync(url);
             resTask.Wait();
